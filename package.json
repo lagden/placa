@@ -1,0 +1,66 @@
+{
+  "name": "@tadashi/placa",
+  "version": "1.0.0",
+  "description": "Consulta de placas de veículos na base de dados do SINESP Cidadão",
+  "keywords": [
+    "placa",
+    "busca",
+    "veículo",
+    "SINESP",
+    "lib"
+  ],
+  "bug": {
+    "url": "https://github.com/lagden/placa/issues",
+    "email": "lagden@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Thiago Lagden",
+    "email": "lagden@gmail.com",
+    "url": "http://lagden.in"
+  },
+  "repository": "lagden/placa",
+  "scripts": {
+    "report": "nyc report --reporter=html",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "xo",
+    "test": "nyc ava --serial"
+  },
+  "engines": {
+    "node": ">=8.9.1"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "semicolon": false,
+    "rules": {
+      "camelcase": [
+        "error",
+        {
+          "properties": "never"
+        }
+      ],
+      "capitalized-comments": 0
+    }
+  },
+  "ava": {
+    "timeout": "30s"
+  },
+  "main": "index.js",
+  "files": [
+    "lib",
+    "license",
+    "readme.md"
+  ],
+  "dependencies": {
+    "got": "8.0.3",
+    "xml2js": "0.4.19"
+  },
+  "devDependencies": {
+    "ava": "0.25.0",
+    "coveralls": "3.0.0",
+    "nyc": "11.4.1",
+    "xo": "0.18.2"
+  }
+}
