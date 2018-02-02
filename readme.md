@@ -22,7 +22,7 @@
 [devDep]:          https://david-dm.org/lagden/placa#info=devDependencies
 [xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
 [xo]:              https://github.com/sindresorhus/xo
-[greenkeeper-img]: https://badges.greenkeeper.io/lagden/koa-error.svg
+[greenkeeper-img]: https://badges.greenkeeper.io/lagden/placa.svg
 [greenkeeper]:     https://greenkeeper.io/
 
 
