@@ -54,13 +54,13 @@
     "readme.md"
   ],
   "dependencies": {
-    "got": "8.0.3",
+    "got": "8.1.0",
     "xml2js": "0.4.19"
   },
   "devDependencies": {
     "ava": "0.25.0",
     "coveralls": "3.0.0",
     "nyc": "11.4.1",
-    "xo": "0.20.0"
+    "xo": "0.20.2"
   }
 }

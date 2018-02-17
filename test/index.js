@@ -1,7 +1,7 @@
 'use strict'
 
 import test from 'ava'
-import placa from '../index'
+import placa from '../.'
 
 test('placa', async t => {
 	const r = await placa('GKC3998')
