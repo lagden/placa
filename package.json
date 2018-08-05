@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/placa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Consulta de placas de veículos na base de dados do SINESP Cidadão",
   "keywords": [
     "placa",
