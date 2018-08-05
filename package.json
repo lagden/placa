@@ -17,8 +17,13 @@
   "author": {
     "name": "Thiago Lagden",
     "email": "lagden@gmail.com",
-    "url": "http://lagden.in"
+    "url": "https://github.com/lagden"
   },
+  "contributors": [{
+    "name": "Lucas Bernardo de Souza Santos",
+    "email": "sorackb@gmail.com",
+    "url": "https://github.com/Sorackb"
+  }],
   "repository": "lagden/placa",
   "scripts": {
     "report": "nyc report --reporter=text-lcov | coveralls",
@@ -42,9 +47,6 @@
       ],
       "capitalized-comments": 0
     }
-  },
-  "ava": {
-    "timeout": "30s"
   },
   "main": "index.js",
   "files": [

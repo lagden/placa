@@ -57,6 +57,16 @@ Nome        | Tipo                 | Requerido | Default           | Descrição
 placa       | string               | sim       | -                 | Placa do veículo
 
 
+## Contribuidores
+
+[<img src="https://avatars3.githubusercontent.com/u/6875298?s=460&v=4" alt="Lucas Bernardo de Souza Santos" width="100">](https://github.com/Sorackb)
+
+
+## Autor
+
+[<img src="https://avatars0.githubusercontent.com/u/130963?s=460&v=4" alt="Thiago Lagden" width="100">](https://github.com/lagden)
+
+
 ## License
 
 MIT © [Thiago Lagden](http://lagden.in)
