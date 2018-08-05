@@ -21,10 +21,9 @@
   },
   "repository": "lagden/placa",
   "scripts": {
-    "report": "nyc report --reporter=html",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "report": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "nyc ava --serial"
+    "test": "ava --serial"
   },
   "engines": {
     "node": ">=8.9.1"
@@ -54,13 +53,12 @@
     "readme.md"
   ],
   "dependencies": {
-    "got": "8.1.0",
+    "got": "9.0.0",
     "xml2js": "0.4.19"
   },
   "devDependencies": {
     "ava": "0.25.0",
-    "coveralls": "3.0.0",
-    "nyc": "11.4.1",
-    "xo": "0.20.2"
+    "nyc": "12.0.2",
+    "xo": "0.21.1"
   }
 }
