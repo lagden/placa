@@ -4,8 +4,6 @@ DIR="$( cd -P "$( dirname "$0" )" && pwd )"
 cd $DIR
 cd ..
 
-NAMESPACE='placa'
-
 abort() {
 	printf "\n  \033[31mError: $@\033[0m\n\n" && exit 1
 }
@@ -16,18 +14,15 @@ ok() {
 
 _cleanup() {
 	docker-compose down --volumes --remove-orphans > /dev/null 2>&1
-	docker stop $(docker ps --all --quiet) > /dev/null 2>&1
-	docker rm $(docker ps --all --quiet --filter="status=exited") > /dev/null 2>&1
-	docker rmi $(docker images -f "dangling=true" -q) > /dev/null 2>&1
 }
 
 trap '_cleanup; abort "Tests Failed For Unexpected Reasons"' HUP INT QUIT PIPE TERM SIGINT SIGTERM
 
-docker-compose -p ${NAMESPACE} up $1 test
-TEST_EXIT_CODE=`docker inspect ${NAMESPACE}_test_1 --format='{{.State.ExitCode}}'`
-
-test $TEST_EXIT_CODE -ne 0 && abort "Test FAIL" || ok "Test PASS"
+docker-compose up $1 --force-recreate test
+TEST_EXIT_CODE=`docker inspect test --format='{{.State.ExitCode}}'`
 
 _cleanup
+
+test $TEST_EXIT_CODE -ne 0 && abort "Test FAIL" || ok "Test PASS"
 
 exit $TEST_EXIT_CODE

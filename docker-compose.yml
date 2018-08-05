@@ -1,11 +1,13 @@
-version: '3.4'
+version: '3.7'
 services:
   test:
     build:
       context: ./
       args:
-        npm_cmd: "npm i --progress=false --quiet"
+        NODE_ENV: test
+        PORT: ${PORT:-3000}
     image: placa:test
+    container_name: test
     command: ["npm", "test"]
     environment:
       - NODE_ENV=test
