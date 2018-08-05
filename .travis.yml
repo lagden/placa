@@ -3,5 +3,5 @@ language: node_js
 node_js:
   - "8"
   - "10"
-script: "npx xo;npx nyc ava --timeout=45s"
+script: "npx xo;npx nyc ava"
 after_script: "npm i coveralls;npm run report"
