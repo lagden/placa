@@ -42,9 +42,15 @@ $ npm i -S @tadashi/placa
 ```js
 const consulta = require('@tadashi/placa');
 
-consulta('GKC3998').then(r => {
-  console.log(r.modelo) // FIAT/MOBI EASY ON
-})
+(async () => {
+  try {
+    const r = await consulta('GKC3998')
+    console.log(r.modelo)
+    //=> FIAT/MOBI EASY ON
+  } catch (err) {
+    console.log(err.message)
+  }
+})()
 ```
 
 
