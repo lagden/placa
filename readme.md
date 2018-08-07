@@ -56,11 +56,12 @@ const consulta = require('@tadashi/placa');
 
 ### API
 
-#### consulta(placa)
+#### consulta(placa, proxyOpts)
 
-Nome        | Tipo                 | Requerido | Default           | Descrição
------------ | -------------------- |:---------:|:-----------------:| ------------
-placa       | string               | sim       | -                 | Placa do veículo
+Nome        | Tipo                 | Requerido | Default                            | Descrição
+----------- | -------------------- |:---------:|:----------------------------------:| ------------
+placa       | string               | sim       | -                                  | Placa do veículo
+proxyOpts   | object               | não       | {host: '177.5.98.58', port: 20183} | Configuração do proxy
 
 
 ## Contribuidores
