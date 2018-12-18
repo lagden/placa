@@ -56,7 +56,7 @@ const consulta = require('@tadashi/placa');
 
 ### API
 
-#### consulta(placa, proxyOpts)
+#### consulta(placa \[, proxyOpts \])
 
 Nome        | Tipo                 | Requerido | Default                            | Descrição
 ----------- | -------------------- |:---------:|:----------------------------------:| ------------
@@ -76,4 +76,4 @@ proxyOpts   | object               | não       | {host: '177.5.98.58', port: 20
 
 ## License
 
-MIT © [Thiago Lagden](http://lagden.in)
+MIT © [Thiago Lagden](https://lagden.in)
