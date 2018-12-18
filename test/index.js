@@ -10,13 +10,13 @@ test('placa', async t => {
 })
 
 test('not found', async t => {
-	const err = await t.throws(placa('AAA0000'))
+	const err = await t.throwsAsync(placa('AAA0000'))
 	t.is(err.status, 404)
 	t.is(err.message, 'Veículo não encontrado')
 })
 
 test('invalid', async t => {
-	const err = await t.throws(placa('1234567'))
+	const err = await t.throwsAsync(placa('1234567'))
 	t.is(err.status, 400)
 	t.is(err.message, 'Placa inválida')
 })
