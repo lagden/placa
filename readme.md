@@ -27,7 +27,7 @@
 
 
 Consulta de placas de veículos na base de dados do SINESP Cidadão  
-Inspirado [nesse](https://github.com/victor-torres/sinesp-client) projeto feito em Python
+Inspirado no projeto feito em Python de [Victor Torres](https://github.com/victor-torres/sinesp-client)
 
 
 ## Instalação
