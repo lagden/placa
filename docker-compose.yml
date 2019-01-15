@@ -13,3 +13,5 @@ services:
       - NODE_ENV=test
     volumes:
       - ./test:/home/node/app/test
+      - ./lib:/home/node/app/lib
+      - ./index.js:/home/node/app/index.js
