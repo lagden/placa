@@ -61,7 +61,10 @@ const consulta = require('@tadashi/placa');
 Nome        | Tipo                 | Requerido | Default                            | Descrição
 ----------- | -------------------- |:---------:|:----------------------------------:| ------------
 placa       | string               | sim       | -                                  | Placa do veículo
-proxyOpts   | object               | não       | {host: '177.5.98.58', port: 20183} | Configuração do proxy
+proxyOpts   | object               | não       | {host: '201.92.20.5', port: 53281} | Configuração do proxy
+
+
+Site com lista de proxy gratuito: http://free-proxy.cz/en/proxylist/country/BR/http/ping/all
 
 
 ## Contribuidores
