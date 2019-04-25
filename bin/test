@@ -1,9 +1,5 @@
 #!/bin/bash
 
-DIR="$( cd -P "$( dirname "$0" )" && pwd )"
-cd $DIR
-cd ..
-
 abort() {
 	printf "\n  \033[31mError: $@\033[0m\n\n" && exit 1
 }
@@ -13,16 +9,57 @@ ok() {
 }
 
 _cleanup() {
-	docker-compose down --volumes --remove-orphans > /dev/null 2>&1
+	docker-compose -f $@ down --volumes --remove-orphans > /dev/null 2>&1
 }
 
-trap '_cleanup; abort "Tests Failed For Unexpected Reasons"' HUP INT QUIT PIPE TERM SIGINT SIGTERM
+usage() {
+	cat <<-EOF
 
-docker-compose up $1 --force-recreate test
-TEST_EXIT_CODE=`docker inspect test --format='{{.State.ExitCode}}'`
+  Usage: $0 [-b] [-s <service>]
 
-_cleanup
+  Options:
+    -b   Build image
+    -s   Docker compose service name
+    -h   Show usage
 
-test $TEST_EXIT_CODE -ne 0 && abort "Test FAIL" || ok "Test PASS"
+EOF
+exit 0
+}
 
-exit $TEST_EXIT_CODE
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+cd $DIR
+cd ..
+
+CURR_FOLDER=`pwd`
+BUILD=""
+SERVICE="test"
+OPT="test"
+COMPOSE_TEST="${CURR_FOLDER}/docker-compose.test.yml"
+
+trap '_cleanup $COMPOSE_TEST; abort "Tests failed for unexpected reasons"' HUP INT QUIT PIPE TERM SIGINT SIGTERM
+
+while getopts ":bs:" o
+do
+	case ${o} in
+		b) BUILD="--build" ;;
+		s) SERVICE=$OPTARG ;;
+		*) usage ;;
+	esac
+done
+
+docker-compose \
+	-f $COMPOSE_TEST \
+	up \
+	--force-recreate \
+	--always-recreate-deps \
+	--abort-on-container-exit \
+	--exit-code-from $SERVICE \
+	--remove-orphans \
+	$BUILD \
+	$SERVICE
+
+test $? -ne 0 && abort "Test FAIL" || ok "Test PASS"
+
+_cleanup $COMPOSE_TEST
+
+exit 0

@@ -4,10 +4,8 @@ services:
     build:
       context: ./
       args:
-        NODE_ENV: test
-        PORT: ${PORT:-3000}
+        NODE_ENV: development
     image: placa:test
-    container_name: test
     command: ["npm", "test"]
     environment:
       - NODE_ENV=test
