@@ -1,6 +1,17 @@
 language: node_js
 node_js:
-  - "8"
-  - "10"
+  - 8
+  - 10
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
+before_script: "npm i coveralls nyc"
 script: "npx xo;npx nyc ava"
-after_script: "npm i coveralls nyc;npm run report"
+after_script: "npm run report"
+
+branches:
+  only:
+    - master

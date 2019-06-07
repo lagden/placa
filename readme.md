@@ -29,6 +29,21 @@
 Consulta de placas de veículos na base de dados do SINESP Cidadão  
 Inspirado no projeto feito em Python de [Victor Torres](https://github.com/victor-torres/sinesp-client)
 
+---
+
+### Atenção
+
+Na versão 12 do [Node.js](https://nodejs.org/en/) foi desligado o suporte para o `TLS 1.0`, e por causa disso é retornado o seguinte erro:
+
+- `ssl_choose_client_version:unsupported protocol`
+
+Isso é um problema da SINESP que utiliza um protocolo criptográfico (`TLS`) antigo, ou seja, se a SINESP atualizar o `TLS` para 1.2 já resolve o problema.
+
+**Referências**
+
+- https://github.com/nodejs/help/issues/1936
+- https://en.wikipedia.org/wiki/Transport_Layer_Security
+
 
 ## Instalação
 
