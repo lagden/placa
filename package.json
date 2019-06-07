@@ -30,7 +30,7 @@
   "scripts": {
     "report": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "npx -n --tls-min-v1.0 ava"
+    "test": "ava"
   },
   "engines": {
     "node": ">=8.9.1"
