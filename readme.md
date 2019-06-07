@@ -2,7 +2,7 @@
 
 [![NPM version][npm-img]][npm]
 [![Build Status][ci-img]][ci]
-[![Coverage Status][coveralls-img]][coveralls]
+<!-- [![Coverage Status][coveralls-img]][coveralls] -->
 [![Dependency Status][dep-img]][dep]
 [![devDependency Status][devDep-img]][devDep]
 
@@ -33,15 +33,24 @@ Inspirado no projeto feito em Python de [Victor Torres](https://github.com/victo
 
 ### Atenção
 
-Na versão 12 do [Node.js](https://nodejs.org/en/) foi desligado o suporte para o `TLS 1.0`, e por causa disso é retornado o seguinte erro:
+Na versão 12 do [Node.js](https://nodejs.org/en/) o valor default mínimo do TLS é `TLSv1.2`, e por causa disso é retornado o seguinte erro:
 
 - `ssl_choose_client_version:unsupported protocol`
 
-Isso é um problema da SINESP que utiliza um protocolo criptográfico (`TLS`) antigo, ou seja, se a SINESP atualizar o `TLS` para 1.2 já resolve o problema.
+Isso é um problema da SINESP que utiliza um protocolo antigo, ou seja, a SINESP precisa atualizar o TLS para `TLSv1.2`.
+
+#### Workaround
+
+Uma solução alternativa é alterar o valor default mínimo no momento de iniciar o App.  
+Exemplos:
+
+```
+node --tls-min-v1.0 ./meu_app/index.js
+```
 
 **Referências**
 
-- https://github.com/nodejs/help/issues/1936
+- https://nodejs.org/api/tls.html#tls_tls_default_min_version
 - https://en.wikipedia.org/wiki/Transport_Layer_Security
 
 
