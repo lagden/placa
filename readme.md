@@ -1,3 +1,5 @@
+Projeto arquivado, utilizem: https://github.com/Sorackb/sinesp-api
+
 # Placa
 
 [![NPM version][npm-img]][npm]
